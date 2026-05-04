@@ -54,7 +54,7 @@ Linux: Ensure libpcap-dev is installed (sudo apt-get install libpcap-dev).
 
 Bash
 
-git clone https://github.com/JDPOU/Project/_2.git
+git clone https://github.com/JDPOU/Project_2.git
 
 cd Project\_2\_updated/app
 
