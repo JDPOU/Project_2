@@ -54,9 +54,11 @@ Linux: Ensure libpcap-dev is installed (sudo apt-get install libpcap-dev).
 
 Bash
 
-git clone \[YOUR\_REPO\_URL]
+git clone https://github.com/JDPOU/Project\_2.git
 
 cd Project\_2\_updated/app
+
+
 
 2\. Create Virtual Environment
 
@@ -147,6 +149,8 @@ Project\_2\_updated/
 &#x20;       ├── dns.html        # DNS specific forensic view
 
 &#x20;       └── upload.html     # PCAP upload interface
+
+
 
 📝 Troubleshooting \& Notes
 
