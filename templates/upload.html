@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Upload PCAP File</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="pcapfile" class="form-label">Select PCAP file</label>
+        <input class="form-control" type="file" id="pcapfile" name="pcapfile" accept=".pcap,.pcapng">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload and Analyze</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">DNS Analysis</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Source IP</th>
+            <th>Destination IP</th>
+            <th>DNS Query</th>
+            <th>Type</th>
+            <th>Resolved IP</th>
+            <th>Rcode</th>
+            <th>Risk</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% if dns_data|length == 0 %}
+        <tr>
+            <td colspan="8" class="text-center text-muted">
+                No DNS records yet. Start capture or upload a PCAP.
+            </td>
+        </tr>
+    {% endif %}
+
+    {% for row in dns_data %}
+        <tr>
+            <td>{{ row.src }}</td>
+            <td>{{ row.dst }}</td>
+            <td>{{ row.dns_query }}</td>
+            <td>{{ row.dns_type }}</td>
+            <td>{{ row.dns_ip }}</td>
+            <td>{{ row.dns_rcode }}</td>
+            <td>
+                {% if row.risk == "Suspicious" %}
+                    <span class="badge bg-danger">Suspicious</span>
+                {% elif row.risk == "Warning" %}
+                    <span class="badge bg-warning text-dark">Warning</span>
+                {% else %}
+                    <span class="badge bg-success">None</span>
+                {% endif %}
+            </td>
+            <td>{{ row.summary }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
